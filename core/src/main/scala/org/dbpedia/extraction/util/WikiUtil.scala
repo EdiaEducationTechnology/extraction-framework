@@ -57,13 +57,14 @@ object WikiUtil
                 sb.append(r)
               l = r
             case None =>
-              sb.append(c)
+              if (l != replacementChar && c != replacementChar) // replaceAll(" +", " ")
+                sb.append(c)
               l = c
           }
           pos += 1
         }
 
-        sb.toString().replaceAll(" +", " ").trim
+        sb.toString().trim
     }
     
     /**
