@@ -57,7 +57,7 @@ object WikiUtil
                 sb.append(r)
               l = r
             case None =>
-              if (l != replacementChar && c != replacementChar) // replaceAll(" +", " ")
+              if (!(l == replacementChar && c == replacementChar)) // replaceAll(" +", " ")
                 sb.append(c)
               l = c
           }
