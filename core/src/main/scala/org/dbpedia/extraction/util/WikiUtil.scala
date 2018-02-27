@@ -62,7 +62,8 @@ object WikiUtil
           }
           pos += 1
         }
-        sb.toString().trim
+
+        sb.toString().replaceAll(" +", " ").trim
     }
     
     /**
